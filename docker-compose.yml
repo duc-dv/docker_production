@@ -20,7 +20,10 @@ services:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: <%= ENV['DB_PASSWORD'] %>
+      MYSQL_ROOT_USER: <%= ENV['DB_USERNAME'] %>
+      MYSQL_PASSWORD: <%= ENV['DB_PASSWORD'] %>
       MYSQL_DATABASE: <%= ENV['DB_DATABASE'] %>
+
     volumes:
       - db-data:/var/lib/mysql
     networks:
