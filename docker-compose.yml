@@ -11,6 +11,8 @@ services:
       - public-data:/fitO2/public
       - tmp-data:/fitO2/tmp
       - log-data:/fitO2/log
+    enf_file: 
+      - .env
     networks:
       - fitO2-network
     depends_on:
@@ -18,9 +20,9 @@ services:
 
   db:
     image: mysql:5.7
-    env_file:
-      - .env
-
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: fitO2_db
     volumes:
       - db-data:/var/lib/mysql
     networks:
