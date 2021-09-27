@@ -11,7 +11,7 @@ services:
       - public-data:/fitO2/public
       - tmp-data:/fitO2/tmp
       - log-data:/fitO2/log
-    enf_file: 
+    env_file: 
       - .env
     networks:
       - fitO2-network
