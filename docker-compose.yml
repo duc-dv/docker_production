@@ -15,18 +15,18 @@ services:
       - .env
     networks:
       - fitO2-network
-    depends_on:
-      - db
+    #depends_on:
+     # - db
 
-  db:
-    image: mysql:5.7
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: fitO2_db
-    volumes:
-      - db-data:/var/lib/mysql
-    networks:
-      - fitO2-network
+  #db:
+    #image: mysql:5.7
+    #environment:
+      #MYSQL_ROOT_PASSWORD: password
+      #MYSQL_DATABASE: fitO2_db
+    #volumes:
+     # - db-data:/var/lib/mysql
+    #networks:
+     # - fitO2-network
 
   web:
     build:
